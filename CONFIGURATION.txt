@@ -1,0 +1,196 @@
+// Configuration File for Calculator Application
+// Edit these values to customize the application behavior
+
+// ========== DATABASE CONFIGURATION ==========
+// Location: DatabaseHelper.java, lines 5-7
+
+// Database URL (change 'calculator_db' to your database name)
+DATABASE_URL = "jdbc:mysql://localhost:3306/calculator_db"
+
+// Database username (XAMPP default is 'root')
+DATABASE_USER = "root"
+
+// Database password (XAMPP default is empty)
+DATABASE_PASSWORD = ""
+
+// ========== WINDOW CONFIGURATION ==========
+// Location: LoginFrame.java, line 18 & CalculatorFrame.java, line 13
+
+// Login window dimensions
+LOGIN_WIDTH = 400
+LOGIN_HEIGHT = 300
+
+// Calculator window dimensions
+CALCULATOR_WIDTH = 500
+CALCULATOR_HEIGHT = 600
+
+// ========== FONT CONFIGURATION ==========
+// Location: Various Java files
+
+// General font
+FONT_FAMILY = "Arial"
+FONT_SIZE_NORMAL = 12
+FONT_SIZE_LARGE = 14
+FONT_SIZE_TITLE = 20
+FONT_SIZE_DISPLAY = 32
+
+// ========== COLOR CONFIGURATION ==========
+// Location: Various Java files
+
+// Display colors (RGB values)
+DISPLAY_BACKGROUND = RGB(60, 60, 60)
+DISPLAY_TEXT = RGB(0, 255, 0)  // Green text
+DISPLAY_BORDER = RGB(100, 100, 100)
+
+// Button colors
+BUTTON_NUMBER = RGB(70, 70, 70)
+BUTTON_OPERATOR = RGB(100, 150, 200)
+BUTTON_EQUALS = RGB(50, 150, 50)
+BUTTON_CLEAR = RGB(200, 100, 100)
+BUTTON_MODE = RGB(100, 100, 150)
+
+// Background colors
+WINDOW_BACKGROUND = RGB(50, 50, 50)
+PANEL_BACKGROUND = RGB(245, 245, 245)
+HEADER_BACKGROUND = RGB(50, 100, 200)
+
+// ========== CALCULATOR LOGIC ==========
+// Location: CalculatorLogic.java
+
+// Number display precision (decimal places)
+DECIMAL_PRECISION = 6
+
+// Memory size (in number of stored values)
+MEMORY_SIZE = 1
+
+// ========== BUTTON LAYOUTS ==========
+
+// GENERAL MODE BUTTONS (5 columns x 6 rows):
+// AC    | CE    | Ans   | ÷     | (empty)
+// 7     | 8     | 9     | ×     | M+
+// 4     | 5     | 6     | -     | M-
+// 1     | 2     | 3     | +     | RND
+// 0     | .     | =     | (em)  | (em)
+// (empty cells)
+
+// SCIENTIFIC MODE BUTTONS (6 columns x 8 rows):
+// Deg   | Rad   | Inv   | x!    | sin   | cos
+// tan   | ln    | log   | √     | x^y   | EXP
+// π     | Ans   | e^x   | 10^x  | x²    | ⁿ√x
+// Rnd   | (     | )     | %     | CE    | AC
+// ÷     | ×     | -     | +     | (em)  | (em)
+// 7     | 8     | 9     | (em)  | (em)  | (em)
+// 4     | 5     | 6     | (em)  | (em)  | (em)
+// 1     | 2     | 3     | 0     | .     | =
+
+// ========== VALIDATION RULES ==========
+
+// Username validation
+MIN_USERNAME_LENGTH = 3
+MAX_USERNAME_LENGTH = 50
+
+// Password validation
+MIN_PASSWORD_LENGTH = 4
+MAX_PASSWORD_LENGTH = 100
+
+// ========== PRECISION & LIMITS ==========
+
+// Maximum display length
+MAX_DISPLAY_LENGTH = 20
+
+// Scientific notation threshold
+SCIENTIFIC_NOTATION_THRESHOLD = 1000000
+
+// Factorial input limit (prevent overflow)
+MAX_FACTORIAL_INPUT = 20
+
+// ========== DEGREE/RADIAN MODES ==========
+// Default mode on startup
+DEFAULT_ANGLE_MODE = "DEGREES"  // Options: "DEGREES" or "RADIANS"
+
+// ========== KEYBOARD SHORTCUTS ==========
+// (Can be implemented in CalculatorFrame.java)
+
+// Enter key = Calculate (=)
+// Escape key = Clear All (AC)
+// Backspace = Delete last character (CE)
+// +, -, *, / = Operations
+// . = Decimal point
+// Numbers 0-9 = Input numbers
+
+// ========== ADVANCED CUSTOMIZATION ==========
+
+// Enable Debug Mode (prints to console)
+DEBUG_MODE = false
+
+// Enable experimental features
+EXPERIMENTAL_FEATURES = false
+
+// Connection timeout (milliseconds)
+CONNECTION_TIMEOUT = 5000
+
+// Thread pool size for database operations
+THREAD_POOL_SIZE = 5
+
+// ========== THEME COLORS ==========
+// Uncomment one set to use that theme
+
+// DARK THEME (Current)
+PRIMARY_COLOR = RGB(50, 100, 200)
+SECONDARY_COLOR = RGB(100, 150, 200)
+BACKGROUND = RGB(50, 50, 50)
+TEXT = RGB(255, 255, 255)
+
+// LIGHT THEME (Alternative)
+// PRIMARY_COLOR = RGB(100, 150, 255)
+// SECONDARY_COLOR = RGB(150, 200, 255)
+// BACKGROUND = RGB(240, 240, 240)
+// TEXT = RGB(0, 0, 0)
+
+// ========== FILE PATHS ==========
+// (If implementing file-based logs in future)
+
+// Log file location
+LOG_FILE_PATH = "./calculator.log"
+
+// User history file
+HISTORY_FILE_PATH = "./user_history.txt"
+
+// ========== UPDATE CHECKS ==========
+// (If implementing auto-update feature)
+
+CHECK_FOR_UPDATES = false
+UPDATE_CHECK_URL = "https://example.com/calculator/version.txt"
+CURRENT_VERSION = "1.0"
+
+// ========== HOW TO CUSTOMIZE ==========
+/*
+ * To change colors:
+ *   1. Find the line in the .java file with the color you want to change
+ *   2. Change the RGB values (0-255 each)
+ *   3. Recompile: javac -cp "mysql-connector-java-8.0.33.jar" *.java
+ *   4. Run again
+ *
+ * To change window size:
+ *   1. Find setSize() in LoginFrame.java or CalculatorFrame.java
+ *   2. Change width and height values
+ *   3. Recompile and run
+ *
+ * To add new buttons:
+ *   1. Add to appropriate button array in CalculatorFrame.java
+ *   2. Add handling in handleButtonClick() method
+ *   3. Add logic in CalculatorLogic.java if needed
+ *   4. Recompile and run
+ *
+ * To modify database:
+ *   1. Edit DatabaseHelper.java connection string (line 5-7)
+ *   2. Modify SQL queries in DatabaseHelper methods
+ *   3. Recompile and run
+ */
+
+// ========== NOTES ==========
+// - This file is for reference only; actual configuration is in the .java files
+// - RGB values range from 0-255 for each color component
+// - Always recompile after making changes to .java files
+// - Keep a backup of original files before making modifications
+// - Test changes in a safe environment first
